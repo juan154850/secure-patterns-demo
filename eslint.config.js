@@ -25,4 +25,13 @@ export default [
     },
   },
   pluginSecurity.configs.recommended,
+  {
+    files: ['**/*.test.js', '**/*.spec.js'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.jest,
+      },
+    },
+  },
 ];
