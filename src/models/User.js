@@ -13,7 +13,7 @@ export const User = sequelize.define('User', {
     unique: true,
   },
   password: {
-    type: DataTypes.STRING(96), // almacenará hash posteriormente
+    type: DataTypes.STRING(96),
     allowNull: false,
   },
 });
