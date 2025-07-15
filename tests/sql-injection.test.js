@@ -1,12 +1,12 @@
 import request from 'supertest';
 import app from '../src/app.js';
 import { sequelize } from '../src/config/database.js';
-import { User } from '../src/models/user.js';
+import { User } from '../src/models/index.js';
 
 // Setup y teardown para tests
 beforeAll(async () => {
   await sequelize.authenticate();
-  await User.sync({ force: true }); // Recrear tabla para tests
+  await sequelize.sync({ alter: true });
 });
 
 afterAll(async () => {

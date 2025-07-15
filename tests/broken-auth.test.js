@@ -1,13 +1,13 @@
 import request from 'supertest';
 import app from '../src/app.js';
 import { sequelize } from '../src/config/database.js';
-import { User } from '../src/models/user.js';
+import { User } from '../src/models/index.js';
 import jwt from 'jsonwebtoken';
 
 // Setup y teardown para tests
 beforeAll(async () => {
   await sequelize.authenticate();
-  await User.sync({ force: true });
+  await sequelize.sync({ alter: true });
 });
 
 afterAll(async () => {

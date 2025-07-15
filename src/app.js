@@ -6,6 +6,7 @@ import pingRouter from './routes/ping.js';
 import sqlInjectionRouter from './routes/sql-injection.js';
 import xssRouter from './routes/xss.js';
 import brokenAuthRouter from './routes/broken-auth.js';
+import brokenAccessControlRouter from './routes/broken-access-control.js';
 
 const app = express();
 
@@ -21,5 +22,6 @@ app.use('/sql', sqlInjectionRouter);
 app.use('/xss', xssRouter);
 app.use('/csrf', csrfRouter);
 app.use('/auth', brokenAuthRouter);
+app.use('/access', brokenAccessControlRouter);
 
 export default app;
